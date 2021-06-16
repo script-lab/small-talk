@@ -16,7 +16,11 @@ const App = () => {
       title,
       body
     })
+    setTitle("")
+    setBody("")
   }
+
+  const unCreate = title === "" || body === ""
 
 
   return (
@@ -34,7 +38,7 @@ const App = () => {
             <input className="form-control" id="formEventBody" value={body} onChange={e => setBody(e.target.value)}></input>
           </div>
 
-          <button className="btn btn-primary" onClick={addEvent}>イベントを作成する</button>
+          <button className="btn btn-primary" onClick={addEvent} disabled={unCreate}>イベントを作成する</button>
           <button className="btn btn-danger">全てのイベントを削除する</button>
         </form>
 
